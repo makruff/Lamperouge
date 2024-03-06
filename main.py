@@ -3,8 +3,8 @@ import socket
 import datetime
 
 def get_ssl_expiry_date(hostname):
-  context= ssl.create_default_context()
-  with socket.create_connection(hostname, 443) as sock:
+  context = ssl.create_default_context()
+  with socket.create_connection((hostname, 443)) as sock:
     with context.wrap_socket(sock, server_hostname=hostname) as sstock:
       cert = sscok.getpeercert()
       #ekstract the 'notAfter' field from the certificate
