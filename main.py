@@ -5,8 +5,8 @@ import datetime
 def get_ssl_expiry_date(hostname):
   context = ssl.create_default_context()
   with socket.create_connection((hostname, 443)) as sock:
-    with context.wrap_socket(sock, server_hostname=hostname) as sstock:
-      cert = sscok.getpeercert()
+    with context.wrap_socket(sock, server_hostname=hostname) as ssock:
+      cert = ssok.getpeercert()
       #ekstract the 'notAfter' field from the certificate
       not_after_str =cert['notAfter']
       #confert the date string to a datetime object
